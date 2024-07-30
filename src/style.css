@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --font-family-default: "Open Sans", sans-serif;
   --font-family-secondary: "Raleway", sans-serif;
@@ -61,4 +63,63 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+.header {
+  padding: 1.5rem 1.25rem;
+}
+
+.header__nav,
+.header__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: inline-block;
+  min-height: 24px;
+  min-width: 80px;
+  background-image: url("./images/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.header__list {
+  column-gap: 1.5rem;
+  padding-right: 0.25rem;
+}
+
+.header__link {
+  display: block;
+  font-size: var(--font-size-300);
+  line-height: 1.1667;
+}
+
+.header__link:hover {
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    margin-top: 3.125rem;
+    padding-inline: 5rem;
+  }
+
+  .header__logo {
+    min-height: 52px;
+    min-width: 176px;
+  }
+
+  .header__list {
+    column-gap: 3.625rem;
+    padding-right: 0;
+  }
+
+  .header__link {
+    font-size: var(--font-size-500);
+    line-height: 1.1875;
+  }
 }
