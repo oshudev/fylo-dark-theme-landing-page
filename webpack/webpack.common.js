@@ -1,7 +1,7 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   entry: {
@@ -14,10 +14,10 @@ module.exports = {
   },
   module: {
     rules: [
-      //   {
-      //     test: /\.html$/i,
-      //     loader: "html-loader",
-      //   },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
@@ -37,8 +37,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title:
-        "Frontend Mentor | Fylo landing page with dark theme and features grid",
       filename: "index.html",
       template: path.resolve(__dirname, "../src/index.html"),
     }),

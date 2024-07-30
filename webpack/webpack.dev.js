@@ -10,6 +10,7 @@ module.exports = merge(common, {
     port: 3000,
     hot: true,
     compress: true,
+    watchFiles: ["src/**/*.html"],
     historyApiFallback: true,
   },
 });
