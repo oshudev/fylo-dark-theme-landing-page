@@ -217,3 +217,43 @@ h6 {
     line-height: 1.25;
   }
 }
+
+.feature {
+  margin-top: 7.5rem;
+  padding-inline: 1.75rem;
+}
+
+.feature .feature__container {
+  margin-inline: auto;
+  max-width: 55rem;
+}
+
+.feature .feature__list {
+  display: grid;
+  gap: 5rem;
+}
+
+.feature .feature__item {
+  text-align: center;
+}
+
+.feature .feature__item .image-container {
+  margin-bottom: 1.5rem;
+}
+
+.feature .content-container h2 {
+  margin-bottom: 0.5rem;
+  font-size: var(--font-size-600);
+}
+
+@media only screen and (min-width: 640px) {
+  .feature .feature__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.875rem 9.625rem;
+  }
+
+  .feature .content-container h2 {
+    font-size: var(--font-size-700);
+    line-height: 1.5rem;
+  }
+}
