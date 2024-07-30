@@ -1,0 +1,64 @@
+:root {
+  --font-family-default: "Open Sans", sans-serif;
+  --font-family-secondary: "Raleway", sans-serif;
+
+  --font-size-100: 0.5rem;
+  --font-size-200: 0.625rem;
+  --font-size-300: 0.75rem;
+  --font-size-400: 0.875rem;
+  --font-size-500: 1rem;
+  --font-size-600: 1.125rem;
+  --font-size-700: 1.25rem;
+  --font-size-800: 1.5rem;
+  --font-size-900: 2rem;
+  --font-size-1000: 2.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --border-round-sm: 0.25rem;
+  --border-round-md: 0.5rem;
+  --border-pill: 999rem;
+
+  --color-blue-100: hsl(219, 30%, 18%);
+  --color-blue-200: hsl(217, 27%, 15%);
+  --color-blue-300: hsl(217, 27%, 13%);
+  --color-blue-400: hsl(215, 52%, 9%);
+  --color-error: hsl(0, 100%, 63%);
+  --color-accent-01: hsl(198, 60%, 50%);
+  --color-accent-02: hsl(176, 68%, 64%);
+  --color-button-hovered: hsl(186, 61%, 72%);
+  --color-neutral-100: hsl(0, 0%, 100%);
+  --color-neutral-200: hsl(243, 87%, 12%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-400);
+  line-height: 1.5;
+  color: var(--color-neutral-100);
+  background-color: var(--color-blue-300);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
