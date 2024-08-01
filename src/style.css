@@ -291,7 +291,6 @@ h6 {
   position: relative;
   z-index: 1;
   padding-inline: 1.75rem;
-  border: 1px solid red;
 }
 
 .feature .feature__container {
