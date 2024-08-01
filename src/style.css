@@ -37,6 +37,11 @@
 * {
   padding: 0;
   margin: 0;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -95,6 +100,7 @@ h6 {
 
 .header {
   padding: 1.5rem 1.25rem;
+  background-color: var(--color-blue-200);
 }
 
 .header__nav,
@@ -132,8 +138,11 @@ h6 {
 
 @media only screen and (min-width: 1024px) {
   .header {
-    margin-top: 3.125rem;
     padding-inline: 5rem;
+  }
+
+  .header .header__nav {
+    margin-top: 3.125rem;
   }
 
   .header__logo {
@@ -152,12 +161,60 @@ h6 {
   }
 }
 
-.viewport {
-  margin-top: 1.5rem;
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem 1.75rem 7.5rem;
 }
 
-.hero {
-  padding-inline: 1.75rem;
+.hero__wavy-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(24rem, -56.25rem + 267.5vw, 50.75rem);
+  background-color: var(--color-blue-200);
+}
+
+.hero__wavy-bg .image-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+}
+
+.hero__wavy-bg .image-container img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.hero__wavy-bg .image-container .mobile {
+  display: inline-block;
+}
+
+.hero__wavy-bg .image-container .desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 640px) {
+  .hero {
+    background-color: var(--color-blue-200);
+  }
+
+  .hero__wavy-bg {
+    top: auto;
+    bottom: -1.375rem;
+  }
+
+  .hero__wavy-bg .image-container .mobile {
+    display: none;
+  }
+
+  .hero__wavy-bg .image-container .desktop {
+    display: inline-block;
+  }
 }
 
 .hero__container {
@@ -167,11 +224,11 @@ h6 {
 }
 
 .hero .content-container,
-.hero .image-container {
+.hero .content-container .image-container {
   margin-bottom: 2rem;
 }
 
-.hero .image-container,
+.hero .content-container .image-container,
 .feature-panel .image-container {
   padding-inline: 0.5rem;
 }
@@ -199,7 +256,11 @@ h6 {
 }
 
 @media only screen and (min-width: 1024px) {
-  .hero .image-container {
+  .hero {
+    padding-block: calc(4.625rem + 1px) 9.875rem;
+  }
+
+  .hero .content-container .image-container {
     margin-bottom: 2.25rem;
   }
 
@@ -220,9 +281,17 @@ h6 {
   }
 }
 
+.feature,
+.testimonials,
+.feature-panel {
+  background-color: var(--color-blue-300);
+}
+
 .feature {
-  margin-top: 7.5rem;
+  position: relative;
+  z-index: 1;
   padding-inline: 1.75rem;
+  border: 1px solid red;
 }
 
 .feature .feature__container {
@@ -249,10 +318,6 @@ h6 {
 }
 
 @media only screen and (min-width: 640px) {
-  .feature {
-    margin-top: 9.875rem;
-  }
-
   .feature .feature__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 4.875rem 9.625rem;
@@ -379,11 +444,27 @@ h6 {
 }
 
 .testimonials {
+  position: relative;
+  z-index: 1;
   margin: 10rem auto;
   padding-top: calc(1rem - 1px);
   padding-inline: 3rem;
   max-width: 78.5rem;
   gap: 1.5rem;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  margin-inline: 0.375rem;
+  width: 1.375rem;
+  height: 1.125rem;
+  background-image: url("./images/bg-quotes.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 @media only screen and (min-width: 640px) {
@@ -407,8 +488,14 @@ h6 {
   .testimonials {
     columns: 3;
     gap: 2.5rem;
-    margin-block: 7.5rem 12.5rem;
-    padding-top: 3.75rem;
+    margin-block: 8.875rem 12.5rem;
+    padding-top: 2.125rem;
+  }
+
+  .testimonials::before {
+    margin-inline: -0.5rem;
+    width: 3.25rem;
+    height: 2.75rem;
   }
 
   .quote {
